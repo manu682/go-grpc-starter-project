@@ -1,0 +1,25 @@
+version: '3'
+
+tasks:
+  display-variables:
+    summary: |
+      Displays the environmental variable set of GO in the environment.
+    cmds:
+      - echo 'Displaying environmental variables...'
+      - echo '--- GO Setup::1 ----'
+      - echo 'GOPATH -> '
+      - echo $GOPATH
+      - echo '--- GO Setup::2 ----'
+      - echo 'GOBIN -> '
+      - echo $GOBIN
+      - echo '---- CCM Setup::1 --'
+      - echo 'JAVA_BIN -> '
+      - echo $JAVA_BIN
+      - echo '---- CCM Setup::2 --'
+      - echo 'JAVA_HOME -> '
+      - echo $JAVA_HOME
+      - echo '---- CCM Setup::3 --'
+      - echo 'Python version -> '
+      - python --version
+      - echo '-----------------------------------'
+      - echo ''

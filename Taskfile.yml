@@ -1,0 +1,28 @@
+version: '3'
+
+includes:
+  env: ./build/EnvTaskfile.yml
+  proto: ./build/ProtoTaskfile.yml
+  lint: ./build/LintTaskFile.yml
+  test: ./build/TestTaskFile.yml
+  local: ./build/LocalSetupTaskFile.yml
+
+silent: true
+
+tasks:
+  build:
+    cmds:
+      - echo 'Building project go-grpcs-starter-project...'
+      - go build -v ./...
+      - echo '######################################'
+
+  all:
+    cmds:
+      - task: env:display-variables
+      - task: proto:generate-proto
+      - task: lint:lint-report
+      - task: lint:lint-fix
+      - task: test:execute-tests
+      - task: build
+      - echo 'All tasks have been completed!!!'
+      - echo '######################################'

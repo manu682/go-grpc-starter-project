@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  lint-report:
+    cmds:
+      - echo 'Generate lint report on source code...'
+      - golangci-lint run -v ./... > lint-report.xml
+      - echo '-----------------------------------'
+      - echo ''
+
+  lint-fix:
+    cmds:
+      - echo 'Fix lint issues on source code...'
+      - golangci-lint run -v ./... --fix > lint-report.xml
+      - echo '-----------------------------------'
+      - echo ''

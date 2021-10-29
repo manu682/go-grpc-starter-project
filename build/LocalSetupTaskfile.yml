@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  create-mocks:
+    summary: |
+      Generates the mocks for the test-cases in the project.
+    cmds:
+      - echo 'Generating mocks'
+      - echo '-----------------------------------'
+      - echo ''

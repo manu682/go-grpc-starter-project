@@ -1,0 +1,15 @@
+version: '3'
+
+vars:
+  INTERFACE_FOLDER: internal_interfaces
+  PROTO_GEN_FOLDER: pb
+
+tasks:
+  generate-proto:
+    summary: |
+      Creates the proto generated files.
+    cmds:
+      - echo 'Generating stubs from proto...'
+      - protoc -I=./{{.INTERFACE_FOLDER}} --go_out=./{{.PROTO_GEN_FOLDER}} ./{{.INTERFACE_FOLDER}}/helloworld.proto
+      - echo 'Generated stubs for helloworld.proto!'
+      - echo '-------------------------------------'
